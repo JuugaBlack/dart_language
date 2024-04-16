@@ -2,7 +2,7 @@
 bool isNoble(int atomicNumber) {
   return _nobleGases[atomicNumber] != null;
 }
-isNoble(atomicNumber) {
+isNoble1(atomicNumber) {
   return _nobleGases[atomicNumber] != null;
 }
 bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
@@ -11,10 +11,10 @@ bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
 
 // 参数
 /// 设置 [bold] 和 [hidden] 标志 ...
-void enableFlags({bool? bold, bool? hidden}) {...}
+void enableFlags({bool? bold, bool? hidden}) {}
 enableFlags(bold: true, hidden: false);
 /// 设置 [bold] 和 [hidden] 标志 ...
-void enableFlags({bool bold = false, bool hidden = false}) {...}
+void enableFlags1({bool bold = false, bool hidden = false}) {}
 // bold will be true; hidden will be false.
 enableFlags(bold: true);
 // 如果您希望命名参数是强制性的，要求调用者提供参数的值，请使用以下注释required
@@ -41,7 +41,7 @@ assert(say('Bob', 'Howdy', 'smoke signal') ==
 
 // 要为除 null 之外的可选位置参数定义默认值，请使用 = 指定默认值。
 // 指定的值必须是编译时常量
-String say(String from, String msg, [String device = 'carrier pigeon']) {
+String say1(String from, String msg, [String device = 'carrier pigeon']) {
   var result = '$from says $msg with a $device';
   return result;
 }
@@ -52,7 +52,7 @@ void main() {
   print('Hello, World!');
 }
 // main()以下是接受参数的命令行应用程序的函数示例
-void main(List<String> arguments) {
+void main3(List<String> arguments) {
   print(arguments);
 
   assert(arguments.length == 2);
@@ -72,7 +72,7 @@ var loudify = (msg) => '!!! ${msg.toUpperCase()} !!!';
 assert(loudify('hello') == '!!! HELLO !!!');
 
 // 匿名函数
-const list = ['apples', 'bananas', 'oranges'];
+const list1 = ['apples', 'bananas', 'oranges'];
 list.map((item) {
   return item.toUpperCase();
 }).forEach((item) {
@@ -81,7 +81,7 @@ list.map((item) {
 
 // 词汇作用域
 bool topLevel = true;
-void main() {
+void main3() {
   var insideMain = true;
   void myFunction() {
     var insideFunction = true;
@@ -100,7 +100,7 @@ void main() {
 Function makeAdder(int addBy) {
   return (int i) => addBy + i;
 }
-void main() {
+void main2() {
   // Create a function that adds 2.
   var add2 = makeAdder(2);
   // Create a function that adds 4.
@@ -115,7 +115,7 @@ class A {
   static void bar() {} // 静态方法
   void baz() {} // 实例方法
 }
-void main() {
+void main1() {
   Function x;
   // Comparing top-level functions.
   x = foo;
@@ -137,9 +137,9 @@ void main() {
 }
 
 // 返回值
-foo() {}
+foo1() {}
 assert(foo() == null);
-(String, int) foo() {
+(String, int) foo2() {
   return ('something', 42);
 }
 

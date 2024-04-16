@@ -7,8 +7,8 @@ switch陈述和表达
 循环，如for和while
 例外情况，例如try、catch、 和throw
 */
-
-// if
+void main(List<String> args) {
+  // if
 if (isRaining()) {
   you.bringRainCoat();
 } else if (isSnowing()) {
@@ -120,4 +120,5 @@ var value = switch (something) {
 if (something case somePattern when some || boolean || expression) {
   //                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Guard clause.
   body;
+}
 }

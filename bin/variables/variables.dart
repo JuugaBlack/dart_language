@@ -1,11 +1,11 @@
 // 创建变量
 var name = 'Bob';
-Object name = 'Bob';
-String name = 'Bob'; // 显式声明
+Object name1 = 'Bob';
+String name2 = 'Bob'; // 显式声明
 
 // 空安全
-String? name  // 可空类型。可以是“null”或字符串
-String name   // 不可为 null 的类型。不能为“null”，但可以为字符串
+String? name3;  // 可空类型。可以是“null”或字符串
+String name ;  // 不可为 null 的类型。不能为“null”，但可以为字符串
 
 // 默认值
 int? lineCount;
@@ -32,7 +32,7 @@ late String temperature = readThermometer();
 
 // final和const
 // 实例变量可以是final但不是const
-final name = 'Bob'; 
+final name4 = 'Bob'; 
 final String nickname = 'Bobby';
 name = 'Alice'; // 错误：最终变量只能设置一次
 // 对要成为编译时常量的变量使用 const。如果 const 变量在类级别，则将其标记为 static const
@@ -40,7 +40,7 @@ const bar = 1000000;
 const double atm = 1.01325 * bar; 
 // const 关键字不仅仅用于声明常量变量，还可以使用它来创建常量值，以及声明创建常量值的构造函数
 var foo = const [];
-final bar = const [];
+final bar1 = const [];
 const baz = []; 
 foo = [1, 2, 3]; // 是 const []
 baz = [42]; // 错误：无法为常量变量赋值

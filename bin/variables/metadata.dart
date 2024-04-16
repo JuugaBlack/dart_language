@@ -6,10 +6,11 @@ class Television {
   }
 
   /// Turns the TV's power on.
-  void turnOn() {...}
+  void turnOn() {}
   // ···
 }
-// 所有 Dart 代码都可以使用四种注释： 
+
+// 所有 Dart 代码都可以使用四种注释：
 // @Deprecated、@deprecated、@override和@pragma
 class Todo {
   final String who;

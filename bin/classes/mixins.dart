@@ -1,13 +1,18 @@
 // 混入
 // Mixin 是一种定义可在多个类层次结构中重用的代码的方法。它们旨在集体提供成员实现。
 //要使用 mixin，请使用with关键字后跟一个或多个 mixin 名称。以下示例显示了两个使用 mixin 的类
-class Musician extends Performer with Musical {
-  // ···
-}
+class Performer {}
+
+class Person {}
+
+class Musician extends Performer with Musical {}
+
+mixin Aggressive {}
+mixin Demented {}
 
 class Maestro extends Person with Musical, Aggressive, Demented {
   Maestro(String maestroName) {
-    name = maestroName;
+    // name = maestroName;
     canConduct = true;
   }
 }
@@ -31,7 +36,7 @@ mixin Musical {
 
 // 有时您可能想限制可以使用 mixin 的类型
 // 可以通过使用on关键字指定所需的超类来限制 mixin 的使用
-class Musician {
+class Musician1 {
   // ...
 }
 
@@ -52,7 +57,7 @@ class SingerDancer extends Musician with MusicalPerformer {
  */
 
 // abstract mixin class
-abstract mixin class Musician {
+abstract mixin class Musician2 {
   void playInstrument(String instrumentName);
   void playPiano() {
     playInstrument('Piano');
@@ -63,7 +68,7 @@ abstract mixin class Musician {
   }
 }
 
-class Virtuoso with Musician {
+class Virtuoso with Musician2 {
   // Use Musician as a mixin
   void playInstrument(String instrumentName) {
     print('Plays the $instrumentName beautifully');

@@ -17,10 +17,40 @@ values不能在枚举中声明name 成员，因为它会与自动生成的静态
 枚举的所有实例都必须在声明的开头声明，并且必须至少声明一个实例。 
 增强枚举中的实例方法可以用来this引用当前枚举值
 */
+void main(List<String> args) {
+  // 使用枚举
+  final favoriteColor = Color.blue;
+  if (favoriteColor == Color.blue) {
+    print('Your favorite color is blue!');
+  }
+// 枚举中的每个值都有一个indexgetter，它返回枚举声明中值从零开始的位置
+  assert(Color.red.index == 0);
+  assert(Color.green.index == 1);
+  assert(Color.blue.index == 2);
+// 要获取所有枚举值的列表，请使用枚举values常量
+  List<Color> colors = Color.values;
+  assert(colors[2] == Color.blue);
+// 可以在switch 语句中使用枚举，如果您不处理所有枚举的值，您将收到警告
+  var aColor = Color.blue;
+  switch (aColor) {
+    case Color.red:
+      print('Red as roses!');
+    case Color.green:
+      print('Green as grass!');
+    default: // Without this, you see a WARNING.
+      print(aColor); // 'Color.blue'
+  }
+// 如果您需要访问枚举值的名称（例如'blue'from ）Color.blue，请使用以下.name属性
+  print(Color.blue.name);
+// 可以像访问普通对象一样访问枚举值的成员
+  print(Vehicle.car.carbonFootprint);
+}
+
 enum Vehicle implements Comparable<Vehicle> {
   car(tires: 4, passengers: 5, carbonPerKilometer: 400),
   bus(tires: 6, passengers: 50, carbonPerKilometer: 800),
   bicycle(tires: 2, passengers: 1, carbonPerKilometer: 0);
+
   const Vehicle({
     required this.tires,
     required this.passengers,
@@ -34,30 +64,3 @@ enum Vehicle implements Comparable<Vehicle> {
   @override
   int compareTo(Vehicle other) => carbonFootprint - other.carbonFootprint;
 }
-
-// 使用枚举
-final favoriteColor = Color.blue;
-if (favoriteColor == Color.blue) {
-  print('Your favorite color is blue!');
-}
-// 枚举中的每个值都有一个indexgetter，它返回枚举声明中值从零开始的位置
-assert(Color.red.index == 0);
-assert(Color.green.index == 1);
-assert(Color.blue.index == 2);
-// 要获取所有枚举值的列表，请使用枚举values常量
-List<Color> colors = Color.values;
-assert(colors[2] == Color.blue);
-// 可以在switch 语句中使用枚举，如果您不处理所有枚举的值，您将收到警告
-var aColor = Color.blue;
-switch (aColor) {
-  case Color.red:
-    print('Red as roses!');
-  case Color.green:
-    print('Green as grass!');
-  default: // Without this, you see a WARNING.
-    print(aColor); // 'Color.blue'
-}
-// 如果您需要访问枚举值的名称（例如'blue'from ）Color.blue，请使用以下.name属性
-print(Color.blue.name);
-// 可以像访问普通对象一样访问枚举值的成员
-print(Vehicle.car.carbonFootprint);

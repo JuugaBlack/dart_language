@@ -46,7 +46,7 @@ class Rectangle {
   set bottom(double value) => top = value - height;
 }
 
-void main() {
+void main1() {
   var rect = Rectangle(3, 4, 20, 15);
   assert(rect.left == 3);
   rect.right = 12;
