@@ -20,35 +20,35 @@ void main(List<String> args) {
     c();
   }
 // for-in循环
-  for (final candidate in candidates) {
-    candidate.interview();
-  }
-  for (final Candidate(:name, :yearsExperience) in candidates) {
-    print('$name has $yearsExperience of experience.');
-  }
+  // for (final candidate in candidates) {
+  //   candidate.interview();
+  // }
+  // for (final Candidate(:name, :yearsExperience) in candidates) {
+  //   print('$name has $yearsExperience of experience.');
+  // }
 // 可迭代类还有一个forEach()方法
   var collection = [1, 2, 3];
   collection.forEach(print); // 1 2 3
 
 // while 和 do-while
-  while (!isDone()) {
-    doSomething();
-  }
-  do {
-    printLine();
-  } while (!atEndOfPage());
+  // while (!isDone()) {
+  //   doSomething();
+  // }
+  // do {
+  //   printLine();
+  // } while (!atEndOfPage());
 
 // break 和 continue
-  while (true) {
-    if (shutDownRequested()) break;
-    processIncomingRequests();
-  }
-  for (int i = 0; i < candidates.length; i++) {
-    var candidate = candidates[i];
-    if (candidate.yearsExperience < 5) {
-      continue;
-    }
-    candidate.interview();
-  }
-  candidates.where((c) => c.yearsExperience >= 5).forEach((c) => c.interview());
+  // while (true) {
+  //   if (shutDownRequested()) break;
+  //   processIncomingRequests();
+  // }
+  // for (int i = 0; i < candidates.length; i++) {
+  //   var candidate = candidates[i];
+  //   if (candidate.yearsExperience < 5) {
+  //     continue;
+  //   }
+  //   candidate.interview();
+  // }
+  // candidates.where((c) => c.yearsExperience >= 5).forEach((c) => c.interview());
 }
